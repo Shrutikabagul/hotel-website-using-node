@@ -47,7 +47,8 @@ console.log(typeof json);*/
 const express = require('express')
 const app = express();
 const db=require('./db');
-
+const { configDotenv } = require('dotenv');
+require(configDotenv);
 app.get('/', function (req, res) {
   res.send('Welcome to hotel!!how can i help you')
 })
@@ -63,6 +64,7 @@ app.post('/person',(req,res)=>
     {
         res.send('data is saved')
     })*/
+ const PORT=process.env.PORT || 3000;
 app.listen(3000,()=>
 {
     console.log("listening on port 3000")
